@@ -1,0 +1,44 @@
+{
+    "name": "somnambulist/laravel-doctrine-entity-validation",
+    "type": "library",
+    "description": "Provides integration between Doctrine entities and Laravel Validator.",
+    "keywords": [
+        "doctrine",
+        "laravel",
+        "laravel-doctrine",
+        "validation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dave Redfern",
+            "email": "dave@scorpioframework.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Somnambulist\\EntityValidation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Somnambulist\\Tests\\EntityValidation\\": "tests/"
+        },
+        "classmap": [
+            "tests/_data/"
+        ],
+        "files": [
+            "tests/_data/helpers.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.0",
+        "illuminate/validation": "5.2.*|5.3.*",
+        "laravel-doctrine/orm": "1.*",
+        "ocramius/generated-hydrator": "2.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.4",
+        "illuminate/config": "~5.1"
+    }
+}
