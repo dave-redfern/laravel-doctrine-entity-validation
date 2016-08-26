@@ -92,14 +92,14 @@ class EntityValidationFactory
     }
 
     /**
-     * @param object $entity
+     * @param object|string $entity
      *
      * @return EntityRules
      * @throws ValidationConfigurationException
      */
     public function getEntityRulesFor($entity)
     {
-        $class = ClassUtils::getClass($entity);
+        $class = is_object($entity) ? ClassUtils::getClass($entity) : $entity;
 
         if (null === $rules = $this->ruleMappings->get($class)) {
             throw ValidationConfigurationException::noEntityRulesMappingExists($class);

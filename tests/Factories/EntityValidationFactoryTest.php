@@ -75,6 +75,23 @@ class EntityValidationFactoryTest extends \PHPUnit_Framework_TestCase
      * @group factories
      * @group entity-validation
      */
+    public function testGetEntityRulesViaClassName()
+    {
+        $factory = new EntityValidationFactory(
+            new HydratorFactory(),
+            new Factory(new Translator('en')),
+            [
+                \MyEntity::class => new \MyEntityEntityRules,
+            ]
+        );
+
+        $this->assertInstanceOf(EntityRules::class, $factory->getEntityRulesFor(\MyEntity::class));
+    }
+
+    /**
+     * @group factories
+     * @group entity-validation
+     */
     public function testGetEntityRulesRaisesExceptionIfNotConfigured()
     {
         $factory = new EntityValidationFactory(
