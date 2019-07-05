@@ -1,3 +1,5 @@
+This project is no longer being maintained.
+
 ## Entity Validation for Laravel-Doctrine ORM
 
 Provides integration between standard Doctrine entities and the Laravel Validator
